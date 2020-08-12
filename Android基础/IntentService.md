@@ -1,0 +1,1 @@
+IntentService类相比于普通服务的优点是不需要手动调用服务的stopService或者stopSelf才能停止服务，在执行完onHandlerIntent中的逻辑以后，会自动停止然后调用onDestroy销毁。
