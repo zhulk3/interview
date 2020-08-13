@@ -1,0 +1,15 @@
+Bitmap在Android中指一张图片，可以是png或者jpg或者其他格式的图片，高效的加载图片的核心思想是通过采样率来加载图片，很多时候我们在一个ImageView中显示一张图片时，并不需要加载原始图片大小的图片，加载了那么大的图片ImageView也显示不了，还很容易导致图片占用内存过大导致内存溢出。
+
+通过BitmapFactory的Options类可以实现按采样率加载图片，主要用到inSampleSize参数，加载inSampleSize的平方分之一大小的图片到内存，比如inSampleSize=2，图片实际大小为4M，那就只会加载1M大小的图片；
+
+具体做法是：
+
+1、新建一个BitmapFactory.Options对象；
+
+2、将对象的JustInBounds参数设为true；
+
+3、调用BitmapFactory的DecodeResouce加载图片，这个时候并不会真正的加载，只会测量图片的宽和高；
+
+4、计算inSampleSize；
+
+5、将JustInBound参数设为false，调用BitmapFactory的DecodeResouce加载图片，这次就会按采样率加载；
