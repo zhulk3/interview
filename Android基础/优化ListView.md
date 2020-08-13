@@ -1,0 +1,5 @@
+ListView常用于以列表的形式展示大量的数据，包括一些优化的地方：
+
+通过convertView参数对布局进行缓存，适配器的getView方法会在每次展示一个数据项时重复加载布局资源，由于每个数据项使用的布局都是相同的，可以通过getView的convertView参数对布局进行缓存，避免重复加载；
+
+getView中也还会对控件进行重复加载，也可以通过convertView的setTag方法对控件进行缓存；
