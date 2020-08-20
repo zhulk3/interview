@@ -1,0 +1,7 @@
+LruCache是Android的一个缓存类，底层实现是通过LinkedHashMap实现的，通过强引用的方式引用缓存的对象。
+
+LruCache的使用是首先需要获得当前进程的可用内存，然后确定缓存的大小，最后新建一个LruCache对象即可，LruCache需要重写SizeOf函数，得到每个缓存对象的大小；由于LruCache是一个范型类，类型参数有两个，一个是key的类型，通常是string，另一个是缓存对象的类型。
+
+
+
+LruCache提供了put、get、和entryRemoved方法用来向缓存当中添加、获取和删除记录。
