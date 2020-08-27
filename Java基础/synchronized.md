@@ -1,0 +1,7 @@
+Java当中的一种同步方式，可以用来同步一个静态方法、实例方法、或者代码块。
+
+当同步实例方法时，锁住的是实例对象、同步静态方法时锁住的是指向类的Class对象，同步代码块时工具配置而定。
+
+实现方式是在synchronized会被翻译成为两条字节码，monitorenter和monitorexit，当一个线程执行到monitorenter处时会尝试获取锁住对象所对应的monitor所有权，获得以后才能往下执行，否则阻塞。执行到monitorexit时释放锁。
+
+synchronized获取的锁是存放在Java对象头中的。
