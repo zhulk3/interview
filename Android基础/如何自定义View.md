@@ -6,7 +6,7 @@
 
 1、明确需要继承的View是什么？如果是继承View类，需要处理padding不生效的问题，还有warp_content的问题，wrap_content默认与match_parent相同的；
 
-2、添加剂View的构造方法，
+2、添加View的构造方法，
 
 3、重写父类的方法，比如onDraw，
 
